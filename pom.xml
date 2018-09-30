@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.py</groupId>
+	<artifactId>yshs</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<!-- 打包配置选择 -->
+	<packaging>war</packaging>
+
+	<name>yshs</name>
+	<description>SpringBoot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.0.3.RELEASE</version>
+		<relativePath/>
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+	</properties>
+
+	<dependencies>
+		<!-- SpringBoot核心包 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<!-- SpringBoot单元测试 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<!-- SpringBoot Web支持 -->
+		<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+	    </dependency>
+	    <!-- 支持热部署 -->
+	   	<dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-devtools</artifactId>
+	        <optional>true</optional>
+	   	</dependency>
+	   	<!-- SpringBoot集成MyBatis -->
+        <dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.1.1</version>
+		</dependency>
+	    <!-- SpringBoot连接mysql数据库包 -->
+	    <dependency>
+	        <groupId>mysql</groupId>
+	        <artifactId>mysql-connector-java</artifactId>
+	    </dependency>
+	    <!-- 打包war时排除内置tomcat -->
+	   	<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- 分页插件 -->
+		<dependency>
+	      <groupId>com.github.pagehelper</groupId>
+	      <artifactId>pagehelper</artifactId>
+	      <version>5.1.2</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.github.pagehelper</groupId>
+	      <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+	      <version>1.2.3</version>
+	    </dependency>
+	    <dependency>
+	      <groupId>com.github.pagehelper</groupId>
+	      <artifactId>pagehelper-spring-boot-starter</artifactId>
+	      <version>1.2.3</version>
+	    </dependency>
+	    <!-- fastjson -->
+		<dependency>
+		    <groupId>com.alibaba</groupId>
+		    <artifactId>fastjson</artifactId>
+		    <version>1.2.49</version>
+		</dependency>
+	    <!-- 极光推送 -->
+	    <dependency>
+		    <groupId>cn.jpush.api</groupId>
+		    <artifactId>jpush-client</artifactId>
+		    <version>3.3.7</version>
+		</dependency>
+	    <dependency>
+	        <groupId>cn.jpush.api</groupId>
+	        <artifactId>jiguang-common</artifactId>
+	        <version>1.1.1</version>
+	    </dependency>
+	</dependencies>
+	
+	<!-- 支持热部署 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+	                <fork>true</fork>
+	            </configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
