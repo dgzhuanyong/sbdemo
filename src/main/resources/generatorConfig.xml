@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration >
-  <classPathEntry location="F:\mysql-connector-java-5.1.6-bin.jar" />
+  <classPathEntry location="F:\mysql-connector-java-5.1.6.jar" />
   <!-- defaultModelType="flat" 简单模式 只生成一个entity和dao   -->
   <context id="contextId" defaultModelType="flat"> 
   		<commentGenerator>  
@@ -16,7 +16,7 @@
     
     <javaClientGenerator targetPackage="com.py.yshs.mapper" targetProject="yshs/src/main/java" type="XMLMAPPER" />
     
-    <table domainObjectName="User" tableName="tb_user" enableCountByExample="false" enableUpdateByExample="false"  
+    <table domainObjectName="God" tableName="sys_god" enableCountByExample="false" enableUpdateByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false"  
             selectByExampleQueryId="false">
     </table>

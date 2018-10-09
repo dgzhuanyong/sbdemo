@@ -260,4 +260,9 @@ public class Utils {
 		return digit;
 	}
 	
+	public static void main(String[] args) {
+		String a = Utils.encodeHex(Utils.generateSalt(8));
+		System.out.println(a);
+	}
+	
 }
