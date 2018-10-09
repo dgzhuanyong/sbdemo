@@ -46,8 +46,8 @@ public class SaltUtil {
 	
 	public static void main(String[] args) {
 		String salt = SaltUtil.getSalt();
-		SimpleHash simpleHash = new SimpleHash("MD5", "123456", salt, 1024);
-		System.out.println(simpleHash);
+		String password = new SimpleHash("MD5", "123456", salt, 1024).toHex();
+		System.out.println(password);
 		System.out.println(salt);
 	}
 }
