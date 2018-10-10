@@ -22,34 +22,63 @@
 	      <div class="layadmin-user-login-box layadmin-user-login-body layui-form">
 	        <div class="layui-form-item">
 	          <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
-	          <input type="text" name="username" id="LAY-user-login-username" lay-verify="required" placeholder="用户名" class="layui-input">
+	          <input type="text" name="username" id="username" lay-verify="required" placeholder="用户名" class="layui-input">
 	        </div>
 	        <div class="layui-form-item">
 	          <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
-	          <input type="password" name="password" id="LAY-user-login-password" lay-verify="required" placeholder="密码" class="layui-input">
+	          <input type="password" name="password" id="password" lay-verify="required" placeholder="密码" class="layui-input">
 	        </div>
-	        <!-- <div class="layui-form-item">
-	          <div class="layui-row">
-	            <div class="layui-col-xs7">
-	              <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
-	              <input type="text" name="vercode" id="LAY-user-login-vercode" lay-verify="required" placeholder="图形验证码" class="layui-input">
-	            </div>
-	            <div class="layui-col-xs5">
-	              <div style="margin-left: 10px;">
-	                <img src="https://www.oschina.net/action/user/captcha" class="layadmin-user-login-codeimg" id="LAY-user-get-vercode">
-	              </div>
-	            </div>
-	          </div>
-	        </div> -->
-	        <p style="color:red; margin-bottom:10px;">账号或密码错误</p>
 	        <div class="layui-form-item">
-	          <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit">登 录</button>
+	          <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit" onclick="login();">登 录</button>
 	        </div>
 	      </div>
 	    </div>
 	    <div class="layui-trans layadmin-user-login-footer"> 
 	    </div>
 	</div>
+ <script th:src="@{https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js}"></script>
  <script th:src="@{/layuiAdmin/layui/layui.js}"></script>  
+ <script th:inline="javascript">
+ 	 var basePath = /*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
+ 	 var layer;
+	 layui.use(['layer'], function(){
+		  layer = layui.layer;
+	 });
+	 document.onkeydown = function (event) {
+        var e = event || window.event;
+        //回车键的键值为13
+        if (e && e.keyCode == 13) { 
+        	//调用登录事件
+        	login();
+        }
+	 };
+ 	 function login(){
+ 		 var username = $("#username").val();
+ 		 username = $.trim(username);
+ 		 var password = $("#password").val();
+ 		 password = $.trim(password);
+ 		 if(username.length == 0){
+ 			 layer.msg("账号不能为空");
+ 			 return;
+ 		 }
+ 		 if(password.length == 0){
+			 layer.msg("密码不能为空");
+			 return;
+		 }
+ 		 $.ajax({
+ 		     type: "POST",
+ 		     url: basePath+"/godlogin",
+ 		     data: {loginName:username, password:password},
+ 		     dataType: "json",
+ 		     success: function(data){
+ 	            if(data.code == 1){
+ 	            	window.location.href=basePath+'/index';
+ 	            }else{
+ 	            	layer.msg(data.msg);
+ 	            }
+ 	         }
+ 		 });
+ 	 }
+ </script>
 </body>
 </html>

@@ -1,8 +1,5 @@
 package com.py.yshs.controller;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
@@ -54,7 +51,7 @@ public class HomeController extends BaseController{
         	msg.setMsg("密码不正确");
         	return msg;
 		}
-        msg.setCode("0");
+        msg.setCode("1");
     	msg.setMsg("success");
 		return msg;
 	}
