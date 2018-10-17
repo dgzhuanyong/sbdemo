@@ -19,6 +19,35 @@ public class SaltUtil {
 		return encodeHex(generateSalt(Constants.SALT_SIZE));
 	}
 	
+	/**
+	 * 生成密码
+	 * @param salt
+	 * @return
+	 */
+	public static String getPassWord(String salt) {
+		return new SimpleHash(Constants.HASH_ALGORITHM, Constants.DEFAULT_PASSWORD, salt, Constants.HASH_INTERATIONS).toHex();
+	}
+	
+	/**
+	 * 生成密码
+	 * @param salt
+	 * @return
+	 */
+	public static String getPassWord(String salt,String password) {
+		return new SimpleHash(Constants.HASH_ALGORITHM, password, salt, Constants.HASH_INTERATIONS).toHex();
+	}
+	
+	/**
+	 * 生成X位字节数
+	 * @param nums
+	 * @return
+	 */
+	private static byte[] generateSalt(int nums){
+		byte[] bytes = new byte[nums];
+		random.nextBytes(bytes);
+		return bytes;
+	}
+	
 	
 	/**
 	 * 生成十六进制的字符串
@@ -35,20 +64,11 @@ public class SaltUtil {
 		return new String(out);
 	}
 	
-	/**
-	 * 生成X位字节数
-	 * @param nums
-	 * @return
-	 */
-	private static byte[] generateSalt(int nums){
-		byte[] bytes = new byte[nums];
-		random.nextBytes(bytes);
-		return bytes;
-	}
+	
 	
 	public static void main(String[] args) {
 		String salt = SaltUtil.getSalt();
-		String password = new SimpleHash("MD5", "123456", salt, 1024).toHex();
+		String password = SaltUtil.getPassWord(salt);
 		System.out.println(password);
 		System.out.println(salt);
 	}

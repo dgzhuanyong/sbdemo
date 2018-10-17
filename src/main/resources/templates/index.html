@@ -29,12 +29,16 @@
   </div>
 
   <script th:src="@{/layuiAdmin/layui/layui.js}"></script>
-  <script>
+  <script th:inline="javascript">
   layui.config({
     base: './layuiAdmin/' //静态资源所在路径
   }).extend({
     index: 'lib/index' //主入口模块
   }).use('index');
+  
+  function updatePassWord(){
+	  alert(1345)
+  }
   </script>
 </body>
 </html>
