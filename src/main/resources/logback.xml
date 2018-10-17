@@ -20,13 +20,13 @@
 	
 
 	<!-- project default level -->
-	<logger name="com.py.yshs" level="INFO" />
+	<logger name="com.py.sbdemo" level="INFO" />
 
 	<!--log4jdbc -->
 	<logger name="jdbc.sqltiming" level="INFO"/>
 	
 	<!-- 输出sql语句 -->
-	<logger name="com.py.yshs.dao" level="INFO"/>
+	<logger name="com.py.sbdemo.dao" level="INFO"/>
 	
 	<root level="DEBUG">
 		<appender-ref ref="console" />

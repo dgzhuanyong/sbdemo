@@ -1,4 +1,4 @@
-package com.py;
+package com.py.sbdemo;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -15,6 +15,6 @@ public class ServletInitializer extends SpringBootServletInitializer {
 	
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(yshsAppApplication.class);
+		return application.sources(sbdemoAppApplication.class);
 	}
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.py.yshs.mapper.GodMapper">
-  <resultMap id="BaseResultMap" type="com.py.yshs.entity.God">
+<mapper namespace="com.py.sbdemo.mapper.GodMapper">
+  <resultMap id="BaseResultMap" type="com.py.sbdemo.entity.God">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -24,7 +24,7 @@
     delete from sys_god
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.py.yshs.entity.God">
+  <insert id="insert" parameterType="com.py.sbdemo.entity.God">
     insert into sys_god (id, login_name, password, 
       salt, name, status, reg_time, 
       last_login_time)
@@ -32,7 +32,7 @@
       #{salt,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=BIT}, #{regTime,jdbcType=TIMESTAMP}, 
       #{lastLoginTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.py.yshs.entity.God">
+  <insert id="insertSelective" parameterType="com.py.sbdemo.entity.God">
     insert into sys_god
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.py.yshs.entity.God">
+  <update id="updateByPrimaryKeySelective" parameterType="com.py.sbdemo.entity.God">
     update sys_god
     <set>
       <if test="loginName != null">
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.py.yshs.entity.God">
+  <update id="updateByPrimaryKey" parameterType="com.py.sbdemo.entity.God">
     update sys_god
     set login_name = #{loginName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},

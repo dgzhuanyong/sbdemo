@@ -4,12 +4,12 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.py</groupId>
-	<artifactId>yshs</artifactId>
+	<artifactId>sbdemo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<!-- 打包配置选择 -->
 	<packaging>war</packaging>
 
-	<name>yshs</name>
+	<name>sbdemo</name>
 	<description>SpringBoot</description>
 
 	<parent>

@@ -8,13 +8,13 @@
             <property name="suppressAllComments" value="true" /><!-- 是否取消注释 -->  
             <property name="suppressDate" value="false" /> <!-- 是否生成注释代时间戳 -->  
         </commentGenerator>
-    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/yshs" userId="root" password="root" />
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/sbdemo" userId="root" password="root" />
     
-    <javaModelGenerator targetPackage="com.py.yshs.entity" targetProject="yshs/src/main/java" />
+    <javaModelGenerator targetPackage="com.py.sbdemo.entity" targetProject="sbdemo/src/main/java" />
     
-    <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="yshs/src/main/resources" />
+    <sqlMapGenerator targetPackage="mybatis.mapper" targetProject="sbdemo/src/main/resources" />
     
-    <javaClientGenerator targetPackage="com.py.yshs.mapper" targetProject="yshs/src/main/java" type="XMLMAPPER" />
+    <javaClientGenerator targetPackage="com.py.sbdemo.mapper" targetProject="sbdemo/src/main/java" type="XMLMAPPER" />
     
     <table domainObjectName="God" tableName="sys_god" enableCountByExample="false" enableUpdateByExample="false"  
             enableDeleteByExample="false" enableSelectByExample="false"  

@@ -1,4 +1,4 @@
-package com.py.shiro;
+package com.py.sbdemo.shiro;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

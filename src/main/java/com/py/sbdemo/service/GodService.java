@@ -1,10 +1,10 @@
-package com.py.service;
+package com.py.sbdemo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.py.entity.God;
-import com.py.mapper.GodMapper;
+import com.py.sbdemo.entity.God;
+import com.py.sbdemo.mapper.GodMapper;
 
 @Service
 public class GodService {

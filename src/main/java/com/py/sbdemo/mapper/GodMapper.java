@@ -1,6 +1,6 @@
-package com.py.mapper;
+package com.py.sbdemo.mapper;
 
-import com.py.entity.God;
+import com.py.sbdemo.entity.God;
 
 public interface GodMapper {
     int deleteByPrimaryKey(Integer id);

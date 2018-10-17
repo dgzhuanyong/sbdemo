@@ -1,4 +1,4 @@
-package com.py;
+package com.py.sbdemo;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
@@ -17,11 +17,11 @@ import org.springframework.web.filter.CorsFilter;
  * 2018年8月3日
  */
 @SpringBootApplication
-@MapperScan("com.py.yshs.mapper")
-public class yshsAppApplication {
+@MapperScan("com.py.sbdemo.mapper")
+public class sbdemoAppApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(yshsAppApplication.class, args);
+		SpringApplication.run(sbdemoAppApplication.class, args);
 	}
 	
 	/**

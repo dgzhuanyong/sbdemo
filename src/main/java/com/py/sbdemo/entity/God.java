@@ -1,4 +1,4 @@
-package com.py.entity;
+package com.py.sbdemo.entity;
 
 import java.util.Date;
 

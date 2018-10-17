@@ -1,4 +1,4 @@
-package com.py.special;
+package com.py.sbdemo.special;
 
 public class Msg {
 	

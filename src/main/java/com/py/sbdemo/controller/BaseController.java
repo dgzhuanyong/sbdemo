@@ -1,4 +1,4 @@
-package com.py.controller;
+package com.py.sbdemo.controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
 
-import com.py.entity.God;
-import com.py.utils.Utils;
+import com.py.sbdemo.entity.God;
+import com.py.sbdemo.utils.Utils;
 
 import sun.misc.BASE64Decoder;
 
