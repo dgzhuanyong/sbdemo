@@ -4,6 +4,8 @@ import java.security.SecureRandom;
 
 import org.apache.shiro.crypto.hash.SimpleHash;
 
+import com.py.sbdemo.special.Constants;
+
 public class SaltUtil {
 	
 	private static final char[] DIGITS_LOWER = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
@@ -14,7 +16,7 @@ public class SaltUtil {
 	 * @return
 	 */
 	public static String getSalt() {
-		return encodeHex(generateSalt(8));
+		return encodeHex(generateSalt(Constants.SALT_SIZE));
 	}
 	
 	

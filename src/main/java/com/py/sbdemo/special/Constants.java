@@ -8,20 +8,11 @@ import java.io.Serializable;
 public class Constants implements Serializable{
 
 	private static final long serialVersionUID = -2087804150399520300L;
-
-	/**当前用户*/
-	public static final String CURRENT_USER = "currentUser";
-	
-	/**当前用户所拥有的权限*/
-	public static final String CURRENT_USER_PRIVILEGES = "privileges";
-	
-	/** 强制退出session*/
-	public static final String SESSION_FORCE_LOGOUT_KEY = "session.force.logout";
 	
 	/** 密码加密类型*/
-	public static final String HASH_ALGORITHM = "SHA-1";
+	public static final String HASH_ALGORITHM = "MD5";
 	
-	/** sha-1 迭代次数( 设定安全的密码，生成随机的salt并经过1024次 sha-1 hash )*/
+	/** salt迭代次数*/
 	public static final int HASH_INTERATIONS = 1024;
 	
 	/**用户密码加盐长度*/

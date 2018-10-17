@@ -37,15 +37,10 @@ public class JpushUtil {
 	 * AppKey 
 	 * Master Secret 
 	 */
-	private static  String AppKey = "";
-	private static  String MasterSecret = "";
+	private static  String AppKey = "68eba99dd947275f5e5789db";
+	private static  String MasterSecret = "0e8979d5f59d5d7c9d89149d";
 	//log日志
 	protected static final Logger LOG = LoggerFactory.getLogger(JpushUtil.class);
-	
-	static{
-		AppKey = Utils.getProperties("app_key");
-		MasterSecret = Utils.getProperties("master_secret");
-	}
 	
 	/*****************************************alert通知封装**********************************************************/
 	

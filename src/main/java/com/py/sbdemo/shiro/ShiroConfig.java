@@ -14,6 +14,8 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.py.sbdemo.special.Constants;
+
 import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
 
 @Configuration
@@ -55,8 +57,8 @@ public class ShiroConfig {
 	@Bean
 	public HashedCredentialsMatcher hashedCredentialsMatcher(){
 		HashedCredentialsMatcher hashedCredentialsMatcher = new HashedCredentialsMatcher();
-		hashedCredentialsMatcher.setHashAlgorithmName("MD5");
-		hashedCredentialsMatcher.setHashIterations(1024);
+		hashedCredentialsMatcher.setHashAlgorithmName(Constants.HASH_ALGORITHM);
+		hashedCredentialsMatcher.setHashIterations(Constants.HASH_INTERATIONS);
 		hashedCredentialsMatcher.setStoredCredentialsHexEncoded(true);
 		return hashedCredentialsMatcher;
 	}

@@ -27,7 +27,12 @@ public class HomeController extends BaseController{
 		return "login";
 	}
 	
-	
+	/**
+	 * 登录
+	 * @param request
+	 * @param msg
+	 * @return
+	 */
 	@RequestMapping(value= "godlogin")
 	@ResponseBody
 	public Msg godlogin(HttpServletRequest request,Msg msg){
