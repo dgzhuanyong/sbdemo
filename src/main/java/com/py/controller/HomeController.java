@@ -1,4 +1,4 @@
-package com.py.yshs.controller;
+package com.py.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.py.yshs.special.Msg;
+import com.py.special.Msg;
 
 @Controller
 public class HomeController extends BaseController{

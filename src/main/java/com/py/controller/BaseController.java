@@ -1,4 +1,4 @@
-package com.py.yshs.controller;
+package com.py.controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
 
-import com.py.yshs.entity.God;
-import com.py.yshs.utils.Utils;
+import com.py.entity.God;
+import com.py.utils.Utils;
 
 import sun.misc.BASE64Decoder;
 

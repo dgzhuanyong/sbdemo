@@ -1,4 +1,4 @@
-package com.py.yshs;
+package com.py;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;

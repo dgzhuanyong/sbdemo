@@ -1,10 +1,10 @@
-package com.py.yshs.service;
+package com.py.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.py.yshs.entity.God;
-import com.py.yshs.mapper.GodMapper;
+import com.py.entity.God;
+import com.py.mapper.GodMapper;
 
 @Service
 public class GodService {

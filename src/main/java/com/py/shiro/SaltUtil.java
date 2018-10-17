@@ -1,4 +1,4 @@
-package com.py.yshs.shiro;
+package com.py.shiro;
 
 import java.security.SecureRandom;
 

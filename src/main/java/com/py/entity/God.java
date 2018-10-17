@@ -1,4 +1,4 @@
-package com.py.yshs.entity;
+package com.py.entity;
 
 import java.util.Date;
 

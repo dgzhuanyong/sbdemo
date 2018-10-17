@@ -1,4 +1,4 @@
-package com.py.yshs.special;
+package com.py.special;
 
 import java.io.Serializable;
 

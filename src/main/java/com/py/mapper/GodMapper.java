@@ -1,6 +1,6 @@
-package com.py.yshs.mapper;
+package com.py.mapper;
 
-import com.py.yshs.entity.God;
+import com.py.entity.God;
 
 public interface GodMapper {
     int deleteByPrimaryKey(Integer id);

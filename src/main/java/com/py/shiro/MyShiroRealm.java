@@ -1,4 +1,4 @@
-package com.py.yshs.shiro;
+package com.py.shiro;
 
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -14,8 +14,8 @@ import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.py.yshs.entity.God;
-import com.py.yshs.service.GodService;
+import com.py.entity.God;
+import com.py.service.GodService;
 
 public class MyShiroRealm extends AuthorizingRealm {
 	@Autowired
