@@ -1,5 +1,7 @@
 package com.py.sbdemo.controller;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.shiro.SecurityUtils;
@@ -8,14 +10,20 @@ import org.apache.shiro.authc.IncorrectCredentialsException;
 import org.apache.shiro.authc.UnknownAccountException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.py.sbdemo.entity.God;
+import com.py.sbdemo.service.GodService;
 import com.py.sbdemo.special.Msg;
 
 @Controller
 public class HomeController extends BaseController{
+	
+	@Autowired
+	private GodService godService;
 
 	@RequestMapping(value= {"/","index"})
 	public String index(){
@@ -56,6 +64,10 @@ public class HomeController extends BaseController{
         	msg.setMsg("密码不正确");
         	return msg;
 		}
+		//更新最后一次的登录时间
+		God god = godService.selectByLoginName(loginName);
+		god.setLastLoginTime(new Date());
+		godService.update(god);
         msg.setCode("1");
     	msg.setMsg("success");
 		return msg;

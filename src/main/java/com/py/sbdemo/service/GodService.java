@@ -23,6 +23,10 @@ public class GodService {
 		return godMapper.updateByPrimaryKeySelective(record);
 	}
 	
+	public int deleteByPrimaryKey(Integer id) {
+		return godMapper.deleteByPrimaryKey(id);
+	} 
+	
 	public God selectByPrimaryKey(Integer id) {
 		return godMapper.selectByPrimaryKey(id);
 	}
