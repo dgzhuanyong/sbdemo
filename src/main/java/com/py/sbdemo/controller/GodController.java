@@ -343,8 +343,11 @@ public class GodController extends BaseController {
 	public String toUpdatePassWord(HttpServletRequest request,Model model) {
 		//当前登录GOD
 		God logingod = getCurrentGod();
+		if(null == logingod) {
+			return "redirect:/logout";
+		}
 		model.addAttribute("obj", logingod);
-		return "jsp/god/updatePassWord";
+		return "god/updatePassWord";
 	}
 	
 	
@@ -358,10 +361,15 @@ public class GodController extends BaseController {
 	@ResponseBody
 	@Transactional(rollbackFor = Exception.class)
 	public Map<String, Object> updatePassWord(HttpServletRequest request,Model model) {
-		//当前登录GOD
-		God logingod = getCurrentGod();
 		//返回map
 		Map<String, Object> resultMap = new HashMap<String, Object>();
+		//当前登录GOD
+		God logingod = getCurrentGod();
+		if(null == logingod) {
+			resultMap.put("type", "add");
+			resultMap.put("code", "login");
+			return resultMap;
+		}
 		String oldpass = request.getParameter("oldpass");		
 		String newpass = request.getParameter("newpass");		
 		String repeatpass = request.getParameter("repeatpass");		

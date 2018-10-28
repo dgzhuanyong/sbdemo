@@ -36,8 +36,22 @@
     index: 'lib/index' //主入口模块
   }).use('index');
   
+  var basePath = /*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
+  
   function updatePassWord(){
-	  alert(1345)
+	  layer.open({
+		  type: 2,
+		  title: '修改密码',
+		  shade: 0.8,
+		  maxmin: true,
+		  area: ['60%','60%'],
+		  content: basePath+'/god/toUpdatePassWord',
+		  btn: ['立即提交'],
+		  yes: function(index, layero){ 
+			  var nodeName = window["layui-layer-iframe" + index];
+			  nodeName.submitForm(index);
+		  }
+	 });
   }
   </script>
 </body>
