@@ -27,5 +27,4 @@ public interface GodMapper {
     //检测是否重复
     long checkRepeat(Map<String, Object> searchMap);
     
-    
 }

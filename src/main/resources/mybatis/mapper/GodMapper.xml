@@ -4,15 +4,16 @@
   <resultMap id="BaseResultMap" type="com.py.sbdemo.entity.God">
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="salt" jdbcType="VARCHAR" property="salt" />
-    <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="status" jdbcType="BIT" property="status" />
+    <result column="id_code" jdbcType="VARCHAR" property="idCode" />
     <result column="reg_time" jdbcType="TIMESTAMP" property="regTime" />
     <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, login_name, password, salt, name, status, reg_time, last_login_time
+    id, login_name, name, password, salt, status, id_code, reg_time, last_login_time
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -25,12 +26,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.py.sbdemo.entity.God">
-    insert into sys_god (id, login_name, password, 
-      salt, name, status, reg_time, 
-      last_login_time)
-    values (#{id,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{salt,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{status,jdbcType=BIT}, #{regTime,jdbcType=TIMESTAMP}, 
-      #{lastLoginTime,jdbcType=TIMESTAMP})
+    insert into sys_god (id, login_name, name, 
+      password, salt, status, 
+      id_code, reg_time, last_login_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
+      #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{status,jdbcType=BIT}, 
+      #{idCode,jdbcType=VARCHAR}, #{regTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP}
+      )
   </insert>
   <insert id="insertSelective" parameterType="com.py.sbdemo.entity.God">
     insert into sys_god
@@ -41,17 +44,20 @@
       <if test="loginName != null">
         login_name,
       </if>
+      <if test="name != null">
+        name,
+      </if>
       <if test="password != null">
         password,
       </if>
       <if test="salt != null">
         salt,
       </if>
-      <if test="name != null">
-        name,
-      </if>
       <if test="status != null">
         status,
+      </if>
+      <if test="idCode != null">
+        id_code,
       </if>
       <if test="regTime != null">
         reg_time,
@@ -67,17 +73,20 @@
       <if test="loginName != null">
         #{loginName,jdbcType=VARCHAR},
       </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
       <if test="password != null">
         #{password,jdbcType=VARCHAR},
       </if>
       <if test="salt != null">
         #{salt,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        #{name,jdbcType=VARCHAR},
-      </if>
       <if test="status != null">
         #{status,jdbcType=BIT},
+      </if>
+      <if test="idCode != null">
+        #{idCode,jdbcType=VARCHAR},
       </if>
       <if test="regTime != null">
         #{regTime,jdbcType=TIMESTAMP},
@@ -93,17 +102,20 @@
       <if test="loginName != null">
         login_name = #{loginName,jdbcType=VARCHAR},
       </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
       <if test="password != null">
         password = #{password,jdbcType=VARCHAR},
       </if>
       <if test="salt != null">
         salt = #{salt,jdbcType=VARCHAR},
       </if>
-      <if test="name != null">
-        name = #{name,jdbcType=VARCHAR},
-      </if>
       <if test="status != null">
         status = #{status,jdbcType=BIT},
+      </if>
+      <if test="idCode != null">
+        id_code = #{idCode,jdbcType=VARCHAR},
       </if>
       <if test="regTime != null">
         reg_time = #{regTime,jdbcType=TIMESTAMP},
@@ -117,10 +129,11 @@
   <update id="updateByPrimaryKey" parameterType="com.py.sbdemo.entity.God">
     update sys_god
     set login_name = #{loginName,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
       salt = #{salt,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
       status = #{status,jdbcType=BIT},
+      id_code = #{idCode,jdbcType=VARCHAR},
       reg_time = #{regTime,jdbcType=TIMESTAMP},
       last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
@@ -151,5 +164,4 @@
     	and login_name = #{loginName}
     </if> 
   </select>
-  
 </mapper>

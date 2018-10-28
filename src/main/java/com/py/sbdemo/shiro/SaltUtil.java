@@ -24,8 +24,18 @@ public class SaltUtil {
 	 * @param salt
 	 * @return
 	 */
+	public static String getPassWord() {
+		return getPassWord(getSalt());
+	}
+	
+	
+	/**
+	 * 生成密码
+	 * @param salt
+	 * @return
+	 */
 	public static String getPassWord(String salt) {
-		return new SimpleHash(Constants.HASH_ALGORITHM, Constants.DEFAULT_PASSWORD, salt, Constants.HASH_INTERATIONS).toHex();
+		return getPassWord(salt, Constants.DEFAULT_PASSWORD);
 	}
 	
 	/**

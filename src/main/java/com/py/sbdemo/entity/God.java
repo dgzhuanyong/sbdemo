@@ -7,13 +7,15 @@ public class God {
 
     private String loginName;
 
+    private String name;
+
     private String password;
 
     private String salt;
 
-    private String name;
-
     private Boolean status;
+
+    private String idCode;
 
     private Date regTime;
 
@@ -35,6 +37,14 @@ public class God {
         this.loginName = loginName;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getPassword() {
         return password;
     }
@@ -51,20 +61,20 @@ public class God {
         this.salt = salt;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public Boolean getStatus() {
         return status;
     }
 
     public void setStatus(Boolean status) {
         this.status = status;
+    }
+
+    public String getIdCode() {
+        return idCode;
+    }
+
+    public void setIdCode(String idCode) {
+        this.idCode = idCode;
     }
 
     public Date getRegTime() {
