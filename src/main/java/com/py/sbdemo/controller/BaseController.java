@@ -146,6 +146,7 @@ public class BaseController {
 	 * @return
 	 * @throws Exception
 	 */
+	@SuppressWarnings("restriction")
 	public String analysisPic(String pic) throws Exception{
 		if(pic.indexOf(",") > -1) {
 			pic = pic.split(",")[1];

@@ -37,7 +37,7 @@ public class Utils {
 	 */
 	public static boolean isNull(List<String> values){
 		for (String str : values) {
-			if(StringUtils.isEmpty(str)) {
+			if(StringUtils.isBlank(str)) {
 				return true;
 			}
 		}
@@ -51,7 +51,7 @@ public class Utils {
 	 */
 	public static boolean isNull(String[] values){
 		for (String str : values) {
-			if(StringUtils.isEmpty(str)) {
+			if(StringUtils.isBlank(str)) {
 				return true;
 			}
 		}
@@ -64,7 +64,7 @@ public class Utils {
 	 * @return
 	 */
 	public static boolean isNull(String str){
-		if(StringUtils.isEmpty(str)) {
+		if(StringUtils.isBlank(str)) {
 			return true;
 		}
 		return false;
