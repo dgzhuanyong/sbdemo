@@ -26,9 +26,9 @@
 	<logger name="jdbc.sqltiming" level="INFO"/>
 	
 	<!-- 输出sql语句 -->
-	<logger name="com.py.sbdemo.dao" level="INFO"/>
+	<logger name="com.py.sbdemo.mapper" level="DEBUG"/>
 	
-	<root level="DEBUG">
+	<root level="INFO">
 		<appender-ref ref="console" />
 		<appender-ref ref="rollingFile" />
 	</root>
