@@ -30,7 +30,7 @@
 	<table class="layui-hide" id="tableId" lay-filter="tableFilter"></table>
 	<!-- 右边按钮 -->
 	<script type="text/html" id="rbtn">
-      <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>
+      <a class="layui-btn layui-btn-xs" lay-event="edit">修改</a>
       <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
 	</script>
 	<!-- 模板  -->
@@ -276,7 +276,7 @@
 			  title: title,
 			  shade: 0.8,
 			  maxmin: true,
-			  area: ["80%","80%"],
+			  area: ["80%","60%"],
 			  content: basePath+"/god/toForm?id="+id,
 			  btn: ["立即提交"],
 			  yes: function(index, layero){ 

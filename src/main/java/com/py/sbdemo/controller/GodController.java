@@ -90,16 +90,17 @@ public class GodController extends BaseController {
 		} catch (Exception e) {
 			id = 0;
 		}
+		God god = godService.selectByPrimaryKey(id);
+		model.addAttribute("obj", god);
 		//查询所有角色
 		/*List<Role> list = roleService.selectConditionList(null);
 		model.addAttribute("list", list);
 		if(id > 0) {
-			God god = godService.selectByPrimaryKey(id);
-			model.addAttribute("obj", god);
+
 			GodRole godRole = godRoleService.selectByGodId(id);
 			model.addAttribute("godRole", godRole);
 		}*/
-		return "jsp/god/godForm";
+		return "god/godForm";
 	}
 	
 	
