@@ -42,9 +42,11 @@
   		<input type="checkbox" name="sex" value="{{d.id}}" lay-skin="switch" lay-text="启用|停用" lay-filter="stateFilter" {{ d.state ? '' : 'checked' }}>
 	</script>  
 	<!-- JS -->
-	<script src="${ctx }/static/lib/jquery-1.11.3.min.js"></script>
-	<script src="${ctx}/static/layui/layui.js" charset="utf-8"></script>
-	<script>
+	<script th:src="@{/layuiAdmin/lib/jquery-1.11.3.min.js}"></script>
+	<script th:src="@{/layuiAdmin/layui/layui.js}" charset="utf-8"></script>
+	<script th:inline="javascript">
+	var basePath = /*[[${#httpServletRequest.getScheme() + "://" + #httpServletRequest.getServerName() + ":" + #httpServletRequest.getServerPort() + #httpServletRequest.getContextPath()}]]*/;
+	
 	//加载table模块
 	var table,form;
 	layui.use(['table','form'], function(){
@@ -53,7 +55,7 @@
 	  //加载表格数据
 	  table.render({
 	    elem: '#tableId'
-	    ,url:'${ctx}/god/toListData'
+	    ,url:basePath+'/god/toListData'
 	    ,cellMinWidth: 80
 	    ,page: true
 	    ,cols: [[
@@ -93,7 +95,7 @@
 	  	  }
 	  	  var id = this.value;
 		  $.ajax({
-			url : '${ctx}/god/updateState',		
+			url : basePath+'/god/updateState',		
 			type : "post",
 			async:false,
 			dataType:"json",
@@ -194,7 +196,7 @@
 	function doDelete(title,id){
 		layer.confirm(title, function(index) {
 			$.ajax({
-			     url: '${ctx}/god/delete',
+			     url: basePath+'/god/delete',
 			     type:"post",
 			     //async:false,
 			     dataType:"json",
@@ -230,7 +232,7 @@
 	function doBatchDelete(title,array){
 		layer.confirm(title, function(index) {
 			$.ajax({
-			     url: '${ctx}/god/batchDelete',
+			     url: basePath+'/god/batchDelete',
 			     type:"post",
 			     //async:false,
 			     dataType:"json",
@@ -272,7 +274,7 @@
 			  shade: 0.8,
 			  maxmin: true,
 			  area: ['80%','80%'],
-			  content: '${ctx}/god/toForm?id='+id,
+			  content: basePath+'/god/toForm?id='+id,
 			  btn: ['立即提交'],
 			  yes: function(index, layero){ 
 				  var nodeName = window["layui-layer-iframe" + index];
@@ -289,7 +291,7 @@
 			  shade: 0.8,
 			  maxmin: true,
 			  area: ['80%','60%'],
-			  content: '${ctx}/god/toDetails/'+id
+			  content: basePath+'/god/toDetails/'+id
 		 });
 	}
 	
@@ -297,7 +299,7 @@
 	function doBatchResetPassWord(title,array){
 		layer.confirm(title, function(index) {
 			$.ajax({
-			     url: '${ctx}/god/batchResetPassword',
+			     url: basePath+'/god/batchResetPassword',
 			     type:"post",
 			     //async:false,
 			     dataType:"json",
