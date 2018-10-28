@@ -434,7 +434,6 @@ public class GodController extends BaseController {
 				return false;
 			}
 		}else {
-			
 			if(StringUtils.equals(oldLoginName, newLoginName)) {
 				return true;
 			}else {
