@@ -22,6 +22,7 @@ import com.github.pagehelper.PageHelper;
 import com.py.sbdemo.entity.God;
 import com.py.sbdemo.service.GodService;
 import com.py.sbdemo.shiro.SaltUtil;
+import com.py.sbdemo.special.Constants;
 import com.py.sbdemo.utils.Utils;
 
 @Controller
@@ -39,6 +40,7 @@ public class GodController extends BaseController {
 	 */
 	@RequestMapping(value = "toList")
 	public String toList(HttpServletRequest request,Model model) {
+		model.addAttribute("defaultPassword", Constants.DEFAULT_PASSWORD);
 		return "god/godList";
 	}
 	
@@ -92,6 +94,7 @@ public class GodController extends BaseController {
 		}
 		God god = godService.selectByPrimaryKey(id);
 		model.addAttribute("obj", god);
+		model.addAttribute("defaultPassword", Constants.DEFAULT_PASSWORD);
 		//查询所有角色
 		/*List<Role> list = roleService.selectConditionList(null);
 		model.addAttribute("list", list);

@@ -149,6 +149,7 @@
 		  doBatchDelete("您确定要删除选择的数据吗？删除后将无法恢复。",array);
 	}
 	
+	var defaultPassword = [[${defaultPassword}]]
 	//重置密码
 	function batch_reset_password(){
 		  var array = new Array();
@@ -162,7 +163,7 @@
 				var obj = data[i];
 				array.push(obj.id);
 		  }
-		  doBatchResetPassWord("是否将选择的用户密码重置为：123456",array);
+		  doBatchResetPassWord("是否将选择的用户密码重置为："+defaultPassword,array);
 	}
 	
 	
