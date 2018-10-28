@@ -37,9 +37,6 @@
 	<script id="lastLoginTimeConversion" type="text/html">  
     	{{timestampToTime(d.lastLoginTime)}}   
     </script>
-    <script id="regTimeConversion" type="text/html">  
-    	{{timestampToTime(d.regTime)}}   
-    </script>
     <script id="statusConversion" type="text/html" >
   		<input type="checkbox" name="status" value="{{d.id}}" lay-skin="switch" lay-text="启用|停用" lay-filter="stateFilter" {{ d.status ? "" : "checked" }}>
 	</script>  
@@ -66,7 +63,6 @@
 	      ,{field:"name", title: "姓名"}
 	      ,{field:"idCode", title: "唯一身份标识"}
 	      ,{field:"lastLoginTime", title: "最后登录时间",templet:"#lastLoginTimeConversion"}
-	      ,{field:"regTime", title: "注册时间",templet:"#regTimeConversion"}
 	      ,{field:"status", title:"用户状态",width:90, templet: "#statusConversion"}
 	      ,{title:"操作",align:"center", toolbar: "#rbtn"}
 	    ] ]
@@ -213,6 +209,12 @@
 		    					conditionReset();
 							}, 1500);
 	    				}
+	    				if(code == 'inuse'){
+	    					layer.msg("账号已使用，无法删除", {
+				    			  icon: 5,
+				    			  time: 1500 //1.5秒关闭（如果不配置，默认是3秒）
+				    		});
+	    				}
 	    			 }
 			     },error : function(){
 			    	layer.close(index);
@@ -248,6 +250,12 @@
 		    					//重置页面
 		    					conditionReset();
 							}, 1500);
+	    				}
+	    				if(code == 'inuse'){
+	    					layer.msg("账号已使用，无法删除", {
+				    			  icon: 5,
+				    			  time: 1500 //1.5秒关闭（如果不配置，默认是3秒）
+				    		});
 	    				}
 	    			 }
 			     },error : function(){

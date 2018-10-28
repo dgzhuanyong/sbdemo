@@ -118,6 +118,11 @@ public class GodController extends BaseController {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		//当前登录GOD
 		God logingod = getCurrentGod();
+		if(null == logingod) {
+			resultMap.put("type", "add");
+			resultMap.put("code", "login");
+			return resultMap;
+		}
 		//生成新的salt和password
 		String salt = SaltUtil.getSalt();
 		String password = SaltUtil.getPassWord(salt);
@@ -157,6 +162,11 @@ public class GodController extends BaseController {
 		Map<String, Object> resultMap = new HashMap<String, Object>();
 		//当前登录GOD
 		God logingod = getCurrentGod();
+		if(null == logingod) {
+			resultMap.put("type", "add");
+			resultMap.put("code", "login");
+			return resultMap;
+		}
 		god.setUpdateUser(logingod.getId());
 		god.setUpdateTime(new Date());
 		godService.update(god);
