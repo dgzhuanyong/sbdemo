@@ -17,9 +17,15 @@ public class God {
 
     private String idCode;
 
-    private Date regTime;
-
     private Date lastLoginTime;
+
+    private Date createTime;
+
+    private Integer createUser;
+
+    private Date updateTime;
+
+    private Integer updateUser;
 
     public Integer getId() {
         return id;
@@ -77,19 +83,43 @@ public class God {
         this.idCode = idCode;
     }
 
-    public Date getRegTime() {
-        return regTime;
-    }
-
-    public void setRegTime(Date regTime) {
-        this.regTime = regTime;
-    }
-
     public Date getLastLoginTime() {
         return lastLoginTime;
     }
 
     public void setLastLoginTime(Date lastLoginTime) {
         this.lastLoginTime = lastLoginTime;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public Integer getCreateUser() {
+        return createUser;
+    }
+
+    public void setCreateUser(Integer createUser) {
+        this.createUser = createUser;
+    }
+
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
+    public Integer getUpdateUser() {
+        return updateUser;
+    }
+
+    public void setUpdateUser(Integer updateUser) {
+        this.updateUser = updateUser;
     }
 }

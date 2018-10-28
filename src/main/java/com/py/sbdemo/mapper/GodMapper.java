@@ -18,6 +18,7 @@ public interface GodMapper {
 
     int updateByPrimaryKey(God record);
     
+    
     //查询账号
     God selectByLoginName(String loginName);
     
@@ -26,5 +27,6 @@ public interface GodMapper {
     
     //检测是否重复
     long checkRepeat(Map<String, Object> searchMap);
+    
     
 }

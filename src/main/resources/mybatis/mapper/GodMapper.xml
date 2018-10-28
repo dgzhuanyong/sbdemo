@@ -9,11 +9,15 @@
     <result column="salt" jdbcType="VARCHAR" property="salt" />
     <result column="status" jdbcType="BIT" property="status" />
     <result column="id_code" jdbcType="VARCHAR" property="idCode" />
-    <result column="reg_time" jdbcType="TIMESTAMP" property="regTime" />
     <result column="last_login_time" jdbcType="TIMESTAMP" property="lastLoginTime" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="create_user" jdbcType="INTEGER" property="createUser" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="update_user" jdbcType="INTEGER" property="updateUser" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, login_name, name, password, salt, status, id_code, reg_time, last_login_time
+    id, login_name, name, password, salt, status, id_code, last_login_time, create_time, 
+    create_user, update_time, update_user
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -28,11 +32,13 @@
   <insert id="insert" parameterType="com.py.sbdemo.entity.God">
     insert into sys_god (id, login_name, name, 
       password, salt, status, 
-      id_code, reg_time, last_login_time
+      id_code, last_login_time, create_time, 
+      create_user, update_time, update_user
       )
     values (#{id,jdbcType=INTEGER}, #{loginName,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, 
       #{password,jdbcType=VARCHAR}, #{salt,jdbcType=VARCHAR}, #{status,jdbcType=BIT}, 
-      #{idCode,jdbcType=VARCHAR}, #{regTime,jdbcType=TIMESTAMP}, #{lastLoginTime,jdbcType=TIMESTAMP}
+      #{idCode,jdbcType=VARCHAR}, #{lastLoginTime,jdbcType=TIMESTAMP}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{createUser,jdbcType=INTEGER}, #{updateTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.py.sbdemo.entity.God">
@@ -59,11 +65,20 @@
       <if test="idCode != null">
         id_code,
       </if>
-      <if test="regTime != null">
-        reg_time,
-      </if>
       <if test="lastLoginTime != null">
         last_login_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
@@ -88,11 +103,20 @@
       <if test="idCode != null">
         #{idCode,jdbcType=VARCHAR},
       </if>
-      <if test="regTime != null">
-        #{regTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="lastLoginTime != null">
         #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>
@@ -117,11 +141,20 @@
       <if test="idCode != null">
         id_code = #{idCode,jdbcType=VARCHAR},
       </if>
-      <if test="regTime != null">
-        reg_time = #{regTime,jdbcType=TIMESTAMP},
-      </if>
       <if test="lastLoginTime != null">
         last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=INTEGER},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -134,10 +167,16 @@
       salt = #{salt,jdbcType=VARCHAR},
       status = #{status,jdbcType=BIT},
       id_code = #{idCode,jdbcType=VARCHAR},
-      reg_time = #{regTime,jdbcType=TIMESTAMP},
-      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP}
+      last_login_time = #{lastLoginTime,jdbcType=TIMESTAMP},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      create_user = #{createUser,jdbcType=INTEGER},
+      update_time = #{updateTime,jdbcType=TIMESTAMP},
+      update_user = #{updateUser,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  
+  
   <!-- 查询账号 -->
   <select id="selectByLoginName" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
@@ -164,4 +203,5 @@
     	and login_name = #{loginName}
     </if> 
   </select>
+  
 </mapper>
