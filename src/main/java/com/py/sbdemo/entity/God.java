@@ -122,4 +122,16 @@ public class God {
     public void setUpdateUser(Integer updateUser) {
         this.updateUser = updateUser;
     }
+    
+    /**
+     * 将作为<shiro:principal/>输出
+     */
+	@Override
+	public String toString() {
+		return name;
+	}
+    
+    
+    
+    
 }
