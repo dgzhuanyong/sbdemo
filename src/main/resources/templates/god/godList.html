@@ -89,20 +89,14 @@
 	  
 	  //监听用户状态
 	  form.on("switch(stateFilter)", function(obj){
-	  	  //0启用 1禁用 
-	  	  var state;
-	  	  if(obj.elem.checked){
-	  		state = 0 
-	  	  }else{
-	  		state = 1 
-	  	  }
+	  	  var status = !obj.elem.checked;
 	  	  var id = this.value;
 		  $.ajax({
-			url : basePath+"/god/updateState",		
+			url : basePath+"/god/updateStatus",		
 			type : "post",
 			async:false,
 			dataType:"json",
-			data: {id:id,state:state},
+			data: {id:id,status:status},
 			success : function(result) {
 				if(obj.elem.checked){
 					layer.msg("用户已启用", {

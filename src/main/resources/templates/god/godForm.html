@@ -26,9 +26,9 @@
 	  </div>
 	  
 	  <div class="layui-form-item">
-	    <label class="layui-form-label"><span style="color:red;">*</span>姓名</label>
+	    <label class="layui-form-label"><span style="color:red;">*</span>真实姓名</label>
 	    <div class="layui-input-block">
-	      <input type="text" name="name" lay-verify="name" autocomplete="off" placeholder="请输入姓名" class="layui-input" th:value="${obj?.name }">
+	      <input type="text" name="name" lay-verify="name" autocomplete="off" placeholder="请输入真实姓名" class="layui-input" th:value="${obj?.name }">
 	    </div>
 	  </div>
 	  
@@ -50,13 +50,6 @@
 	      </select>
 	    </div>
 	  </div> -->
-	  
-	  <div class="layui-form-item layui-form-text">
-	    <label class="layui-form-label">唯一身份标识</label>
-	    <div class="layui-input-block">
-	      <textarea placeholder="请输入唯一身份标识,不超过200个字" class="layui-textarea" name="idCode" lay-verify="idCode" th:value="${obj?.idCode }"></textarea>
-	    </div>
-	  </div>
 	  <input type="hidden" name="status" id="status" th:value="${obj?.status}">
 	  <input type="hidden" name="id" th:value="${obj?.id }">
 	  <button class="layui-btn" lay-submit lay-filter="submmitFilter" style="display: none;" id="sunmitbtn"></button>
@@ -132,12 +125,6 @@
 			    if(!new RegExp("^[a-zA-Z0-9_\u4e00-\u9fa5\\s·]+$").test(value)){
 			      return '姓名不能有特殊字符'
 			    }
-			  },
-			  idCode: function(value, item){ //value：表单的值、item：表单的DOM对象
-				value = $.trim(value);
-			  	if(value.length > 200){
-			  		return '唯一身份标识长度不能大于200个字'
-			  	}
 			  }/* ,
 			  role: function(value, item){ //value：表单的值、item：表单的DOM对象
 				value = $.trim(value);
