@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration >
-  <classPathEntry location="F:\mysql-connector-java-5.1.6.jar" />
+  <classPathEntry location="E:\mysql-connector-java-5.1.6.jar" />
   <!-- defaultModelType="flat" 简单模式 只生成一个entity和dao   -->
   <context id="contextId" defaultModelType="flat"> 
   		<commentGenerator>  
