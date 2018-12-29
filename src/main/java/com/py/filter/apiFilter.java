@@ -15,7 +15,7 @@ import org.slf4j.LoggerFactory;
 
 /**
  * 
- * Description: 手机端filter
+ * Description: 全局filter
  *		
  * @author changlu
  *

@@ -18,10 +18,10 @@ import org.springframework.web.filter.CorsFilter;
  */
 @SpringBootApplication
 @MapperScan("com.py.mapper")
-public class springbootAppApplication {
+public class SpringBootAppApplication {
 	
 	public static void main(String[] args) {
-		SpringApplication.run(springbootAppApplication.class, args);
+		SpringApplication.run(SpringBootAppApplication.class, args);
 	}
 	
 	/**

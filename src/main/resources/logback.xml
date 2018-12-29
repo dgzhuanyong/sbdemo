@@ -20,13 +20,13 @@
 	
 
 	<!-- project default level -->
-	<logger name="com.py.sbdemo" level="INFO" />
+	<logger name="com.py" level="INFO" />
 
 	<!--log4jdbc -->
 	<logger name="jdbc.sqltiming" level="INFO"/>
 	
 	<!-- 输出sql语句 -->
-	<logger name="com.py.sbdemo.mapper" level="DEBUG"/>
+	<logger name="com.py.mapper" level="DEBUG"/>
 	
 	<root level="INFO">
 		<appender-ref ref="console" />
